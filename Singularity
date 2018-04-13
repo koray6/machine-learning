@@ -16,7 +16,6 @@ From:nvidia/cuda:8.0-cudnn6-devel-centos7
 
     yum install -y epel-release
  
-    export CENTOS_FRONTEND=noninteractive && \
         yum install -y \
             cmake \
             cuda-drivers \
@@ -42,7 +41,9 @@ From:nvidia/cuda:8.0-cudnn6-devel-centos7
             wget \
             java \
             pygtk2 \
-            cmake3
+            cmake3 \
+            boost \
+            boost-devel
     yum clean all
     rm -rf /var/cache/yum
     
@@ -67,7 +68,8 @@ From:nvidia/cuda:8.0-cudnn6-devel-centos7
             python-utils \
             requests \
             future \
-            hypothesis
+            hypothesis \
+            scikit-learn
     
     python36 -m ipykernel.kernelspec
     
@@ -79,6 +81,12 @@ From:nvidia/cuda:8.0-cudnn6-devel-centos7
     
     # keras
     pip3 --no-cache-dir install --upgrade keras
+
+    # Lasagne
+    pip3 --no-cache-dir install git+git://github.com/Lasagne/Lasagne
+
+    # dlib
+    pip3 --no-cache-dir install dlib
      
     ############################
     # for pip2
@@ -100,7 +108,8 @@ From:nvidia/cuda:8.0-cudnn6-devel-centos7
             common \
             requests \
             future \
-            hypothesis
+            hypothesis \
+            scikit-learn
 
 
     # Install TensorFlow GPU version
@@ -124,5 +133,8 @@ From:nvidia/cuda:8.0-cudnn6-devel-centos7
     && cd .. \
     && rm -rf build
 
+  # Lasagne
+  pip2 --no-cache-dir install git+git://github.com/Lasagne/Lasagne
 
-  pip --no-cache-dir install git+git://github.com/Lasagne/Lasagne
+  # dlib
+  pip2 --no-cache-dir install dlib
