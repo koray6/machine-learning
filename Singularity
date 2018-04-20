@@ -73,10 +73,7 @@ AUTHOR Yasasvy Nanyam ynanyam@iastate.edu
     # keras
     pip2 --no-cache-dir install --upgrade keras
 
-   cd /
-   git clone --recursive https://github.com/caffe2/caffe2.git
-
-
+   
   # Lasagne
   pip2 --no-cache-dir install git+git://github.com/Lasagne/Lasagne
 
