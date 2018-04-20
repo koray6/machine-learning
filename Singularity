@@ -1,57 +1,8 @@
-bootstrap:docker
-From:nvidia/cuda:8.0-cudnn6-devel-centos7
-
-%environment
-
-    LD_LIBRARY_PATH=/host-libs:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda-8.0/lib64:/usr/local/lib:/usr/local/lib64
-    export LD_LIBRARY_PATH
-    PATH=/usr/local/cuda-8.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-    export PATH
-    PYTHONPATH=/usr/local:/usr/local/lib/python2.7/site-packages
-    export PYTHONPATH
+bootstrap:shub
+From:ISU-HPC/ml-base:cu80dnn7
 
 %post
 
-    yum update -y
-
-    yum install -y epel-release
- 
-        yum install -y \
-            cmake \
-            cuda-drivers \
-            curl \
-            git \
-            freetype-devel \
-            libpng-devel \
-            openssl-devel \
-            libXpm-devel \
-            zeromq3-devel \
-            module-init-tools \
-            pkgconfig \
-            python \
-            python-devel \
-            python-pip \
-            python36 \
-            python36-devel \
-            rsync \
-            unzip \
-            zip \
-            zlib-devel \
-            vim \
-            wget \
-            java \
-            pygtk2 \
-            cmake3 \
-            boost \
-            boost-devel
-    yum clean all
-    rm -rf /var/cache/yum
-    
-    
-    curl https://bootstrap.pypa.io/get-pip.py | python36
-
-    pip3 --no-cache-dir install --upgrade pip 
-    
     pip3 --no-cache-dir install \
             h5py \
             ipykernel \
@@ -70,15 +21,15 @@ From:nvidia/cuda:8.0-cudnn6-devel-centos7
             future \
             hypothesis \
             scikit-learn
-    
+
     python36 -m ipykernel.kernelspec
-    
+
     echo "/usr/local/cuda-8.0/lib64/" >/etc/ld.so.conf.d/cuda.conf
     echo "/usr/local/cuda/extras/CUPTI/lib64/" >>/etc/ld.so.conf.d/cuda.conf
-    
+
     # Install TensorFlow GPU version
     pip3 --no-cache-dir install --upgrade tensorflow-gpu==1.4
-    
+
     # keras
     pip3 --no-cache-dir install --upgrade keras
 
@@ -87,12 +38,12 @@ From:nvidia/cuda:8.0-cudnn6-devel-centos7
 
     # dlib
     pip3 --no-cache-dir install dlib
-     
+
     ############################
     # for pip2
- 
+
     pip2 --no-cache-dir install --upgrade pip
-   
+
     pip2 --no-cache-dir install \
             h5py \
             ipykernel \
@@ -117,10 +68,10 @@ From:nvidia/cuda:8.0-cudnn6-devel-centos7
 
     # keras
     pip2 --no-cache-dir install --upgrade keras
-   
-   cd / 
+
+   cd /
    git clone --recursive https://github.com/caffe2/caffe2.git
-   
+
 
    # Caffe2
    cd /caffe2 && mkdir build && cd build \
