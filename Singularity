@@ -1,6 +1,10 @@
 bootstrap:shub
 From:ISU-HPC/ml-base:cu80dnn7
 
+%labels
+
+AUTHOR Yasasvy Nanyam ynanyam@iastate.edu
+
 %post
 
     pip3 --no-cache-dir install \
@@ -72,17 +76,6 @@ From:ISU-HPC/ml-base:cu80dnn7
    cd /
    git clone --recursive https://github.com/caffe2/caffe2.git
 
-
-   # Caffe2
-   cd /caffe2 && mkdir build && cd build \
-    && cmake3 .. \
-    -DUSE_NNPACK=OFF \
-    -DUSE_ROCKSDB=OFF \
-    && make -j"$(nproc)" install \
-    && ldconfig \
-    && make clean \
-    && cd .. \
-    && rm -rf build
 
   # Lasagne
   pip2 --no-cache-dir install git+git://github.com/Lasagne/Lasagne
