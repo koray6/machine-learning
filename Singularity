@@ -42,6 +42,9 @@ AUTHOR Yasasvy Nanyam ynanyam@iastate.edu
 
     # dlib
     pip3 --no-cache-dir install dlib
+    
+    # pytorch
+    pip3 --no-cache-dir install torch torchvision
 
     ############################
     # for pip2
@@ -80,16 +83,6 @@ AUTHOR Yasasvy Nanyam ynanyam@iastate.edu
   # dlib
   pip2 --no-cache-dir install dlib
   
-  # Caffe2
-  cd /
-  git clone --recursive https://github.com/caffe2/caffe2.git
-   
-  cd /caffe2 && mkdir build && cd build \
-    && cmake3 .. \
-    -DUSE_NNPACK=OFF \
-    -DUSE_ROCKSDB=OFF \
-    && make -j"$(nproc)" install \
-    && ldconfig \
-    && make clean \
-    && cd .. \
-    && rm -rf build
+  #pytorch
+  pip2 --no-cache-dir install torch torchvision
+
