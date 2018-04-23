@@ -79,3 +79,14 @@ AUTHOR Yasasvy Nanyam ynanyam@iastate.edu
 
   # dlib
   pip2 --no-cache-dir install dlib
+  
+     # Caffe2
+  cd /caffe2 && mkdir build && cd build \
+    && cmake3 .. \
+    -DUSE_NNPACK=OFF \
+    -DUSE_ROCKSDB=OFF \
+    && make -j"$(nproc)" install \
+    && ldconfig \
+    && make clean \
+    && cd .. \
+    && rm -rf build
