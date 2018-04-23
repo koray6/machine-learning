@@ -80,7 +80,10 @@ AUTHOR Yasasvy Nanyam ynanyam@iastate.edu
   # dlib
   pip2 --no-cache-dir install dlib
   
-     # Caffe2
+  # Caffe2
+  cd /
+  git clone --recursive https://github.com/caffe2/caffe2.git
+   
   cd /caffe2 && mkdir build && cd build \
     && cmake3 .. \
     -DUSE_NNPACK=OFF \
