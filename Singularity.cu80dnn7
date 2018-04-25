@@ -62,7 +62,7 @@ AUTHOR Yasasvy Nanyam ynanyam@iastate.edu
             scipy \
             sklearn \
             opencv-python \
-            mxnet-cu80==0.11.0 \
+            mxnet-cu80 \
             common \
             requests \
             future \
