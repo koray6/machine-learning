@@ -86,17 +86,4 @@ AUTHOR Yasasvy Nanyam ynanyam@iastate.edu
   #pytorch
   pip2 --no-cache-dir install torch torchvision
 
-# Install caffe2 (only for python 2.7)
 
-cd /
-git clone --recursive https://github.com/pytorch/pytorch.git
-
-cd /pytorch && git checkout eb4154a00729a89390bdfe1ba40c721042229dbd && mkdir build && cd build \
-    && /usr/bin/cmake3 .. \
-    -DUSE_NNPACK=OFF \
-    -DUSE_ROCKSDB=OFF \
-    && make -j"$(nproc)" install \
-    && ldconfig \
-    && make clean \
-    && cd .. \
-    && rm -rf build
