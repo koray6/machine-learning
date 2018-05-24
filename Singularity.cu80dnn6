@@ -6,7 +6,6 @@ From:ISU-HPC/ml-base:cu80dnn6
 AUTHOR Yasasvy Nanyam ynanyam@iastate.edu
 
 %post
-
     pip3 --no-cache-dir install \
             h5py \
             ipykernel \
@@ -71,7 +70,7 @@ AUTHOR Yasasvy Nanyam ynanyam@iastate.edu
 
 
     # Install TensorFlow GPU version
-    pip2 --no-cache-dir install --upgrade tensorflow-gpu==1.7
+    pip2 --no-cache-dir install --upgrade tensorflow-gpu==1.4
 
     # keras
     pip2 --no-cache-dir install --upgrade keras
@@ -85,5 +84,3 @@ AUTHOR Yasasvy Nanyam ynanyam@iastate.edu
   
   #pytorch
   pip2 --no-cache-dir install torch torchvision
-
-
