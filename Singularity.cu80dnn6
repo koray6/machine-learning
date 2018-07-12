@@ -84,3 +84,4 @@ AUTHOR Yasasvy Nanyam ynanyam@iastate.edu
   
   #pytorch
   pip2 --no-cache-dir install torch torchvision
+
