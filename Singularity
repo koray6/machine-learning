@@ -32,7 +32,7 @@ AUTHOR Yasasvy Nanyam ynanyam@iastate.edu
     echo "/usr/local/cuda/extras/CUPTI/lib64/" >>/etc/ld.so.conf.d/cuda.conf
 
     # Install TensorFlow GPU version
-    pip3 --no-cache-dir install --upgrade tensorflow-gpu==1.7
+    pip3 --no-cache-dir install --upgrade tensorflow-gpu
 
     # keras
     pip3 --no-cache-dir install --upgrade keras
@@ -71,7 +71,7 @@ AUTHOR Yasasvy Nanyam ynanyam@iastate.edu
 
 
     # Install TensorFlow GPU version
-    pip2 --no-cache-dir install --upgrade tensorflow-gpu==1.7
+    pip2 --no-cache-dir install --upgrade tensorflow-gpu
 
     # keras
     pip2 --no-cache-dir install --upgrade keras
