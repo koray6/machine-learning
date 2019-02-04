@@ -4,6 +4,7 @@ From:ISU-HPC/ml-base:cu90
 %labels
 
 AUTHOR Yasasvy Nanyam ynanyam@iastate.edu
+AUTHOR Koray Ozcan koray6@iastate.edu
 
 %post
 
