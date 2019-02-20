@@ -94,7 +94,7 @@ AUTHOR Koray Ozcan koray6@iastate.edu
   #ffmpeg
   git clone https://git.ffmpeg.org/ffmpeg.git
   cd ffmpeg
-  ./configure --enable-cuda --enable-cuvid --enable-nvenc --enable-nonfree --enable-libnpp --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64
-  make -j 10
+  sudo ./configure --enable-cuda --enable-cuvid --enable-nvenc --enable-nonfree --enable-libnpp --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64
+  sudo make -j 10
   
    
