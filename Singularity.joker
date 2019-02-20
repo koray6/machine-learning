@@ -90,3 +90,9 @@ AUTHOR Koray Ozcan koray6@iastate.edu
   
   #pytorch
   pip2 --no-cache-dir install torch torchvision
+
+  #ffmpeg
+  git clone https://git.ffmpeg.org/ffmpeg.git
+  cd ffmpeg
+  ./configure --enable-cuda --enable-cuvid --enable-nvenc --enable-nonfree --enable-libnpp --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64
+ 
