@@ -27,6 +27,7 @@ AUTHOR Koray Ozcan koray6@iastate.edu
             hypothesis \
             scikit-learn \
             scikit-image \
+            ffmpeg-python \
             imageio
 
     python36 -m ipykernel.kernelspec
@@ -72,6 +73,7 @@ AUTHOR Koray Ozcan koray6@iastate.edu
             hypothesis \
             scikit-learn \
             scikit-image \
+            ffmpeg-python \
             imageio
 
 
@@ -91,10 +93,6 @@ AUTHOR Koray Ozcan koray6@iastate.edu
   #pytorch
   pip2 --no-cache-dir install torch torchvision
 
-  #ffmpeg
-  git clone https://git.ffmpeg.org/ffmpeg.git
-  cd ffmpeg
-  sudo ./configure --enable-cuda --enable-cuvid --enable-nvenc --enable-nonfree --enable-libnpp --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64
-  sudo make -j 10
+  
   
    
