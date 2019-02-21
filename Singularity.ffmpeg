@@ -1,4 +1,5 @@
 bootstrap:shub
+From:ISU-HPC/ml-base:cu90
 From:dl-container-registry/ffmpeg:latest
 
 
